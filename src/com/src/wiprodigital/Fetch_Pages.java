@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 /**
- * Created by Tosh on 28/11/2016.
+ * Created by Shibu on 28/11/2016.
  * This program will show a simple site map, showing links to other pages under the same domain,
  * links to static content such as images, and to external URLs.
  *
