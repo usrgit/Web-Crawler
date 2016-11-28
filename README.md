@@ -12,4 +12,4 @@ Both class got fully coveraged with all the methods as well.
 
 Limitations
 ============
-Test class should need more test case scenario.
+Test class should need more test case scenarios.
