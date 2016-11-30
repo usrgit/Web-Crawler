@@ -15,20 +15,32 @@ import static java.util.regex.Pattern.compile;
  * Please read the  README file for descriptions to find the steps needed to build and run this program.
  */
 public class Crawler {
+    public static void main(String[] args) throws Exception{
+        int z = 0;
+        String listOfURLs[] = new String[1000];
+        Crawler crawler = new Crawler();
+        listOfURLs = crawler.getCrawlFromAddress("http://wiprodigital.com");
+        for (String eachURL : listOfURLs) {
+            if (z == 0) {
+                z++;
+                continue;
+            }
+            System.out.println(eachURL + '\n');
+        }
+    }
 
-    public static void main(String[] args) throws Exception {
-        String allURLs[] = new String[1000];
-        String domainURL = "http://wiprodigital.com";
-        String page = Fetch_Pages.getURL(domainURL);
-        int i, tmp, MAX = 1000;
-        int startingPoint , endingPoint = page.indexOf("<body");
+    public String[] getCrawlFromAddress(String address) throws Exception {
+        List<Object> list;
+        String[] result;
+        HashSet set;
         Pattern pattern;
         String urlFromPage;
-        List<String> list;
-        HashSet set;
-        String[] result;
-        for (i =1 ; i < MAX; i++) {
-            startingPoint = page.indexOf("\"http://", endingPoint)+1;
+        Object[] allURLs = new Object[1000];
+        String page = Fetch_Pages.getURL(address);
+        int i, tmp, MAX = 1000;
+        int startingPoint, endingPoint = page.indexOf("<body");
+        for (i = 1; i < MAX; i++) {
+            startingPoint = page.indexOf("\"http://", endingPoint) + 1;
             endingPoint = page.indexOf("\"", startingPoint);
             tmp = page.indexOf("'", startingPoint);
             if (tmp < endingPoint && tmp != -1) endingPoint = tmp;
@@ -36,19 +48,17 @@ public class Crawler {
             pattern = compile("^http://(?:[a-zA-Z0-9-]+\\.)*wiprodigital\\.com(?:/[^#]*(?:#[^#]+)?)?$");
             Matcher matcher = pattern.matcher(urlFromPage);
             if (matcher.find()) {
-                allURLs[i] = urlFromPage; }
+                allURLs[i] = urlFromPage;
+            }
         }
         list = Arrays.asList(allURLs);
         set = new HashSet(list);
         result = new String[set.size()];
         set.toArray(result);
-        int z = 0;
-        for (String aResult : result){
-            if(z==0){
-                z++;
-                continue;
-            }
-            System.out.println(aResult + '\n');
-        }
+        return result;
     }
 }
+
+
+
+
