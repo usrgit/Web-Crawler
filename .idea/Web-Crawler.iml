@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/out" />
-    <output-test url="file://$MODULE_DIR$/out" />
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-output" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="file://$USER_HOME$/Downloads/jdk-7u79-docs-all" />
+    </javadoc-paths>
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/code-coverage" />
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" scope="PROVIDED">
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
       <library name="JUnit4">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/.idea/lib/junit-4.12.jar!/" />
@@ -19,7 +27,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
       <library>
         <CLASSES>
           <root url="jar://C:/JUnit/junit-4.12.jar!/" />
